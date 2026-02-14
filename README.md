@@ -7,4 +7,4 @@ Página web básica con estilos CSS y publicación en GitHub Pages.
 - `styles.css`
 
 ## Enlace
-GitHub Pages: `https://TU-USUARIO.github.io/TU-REPO/`
+GitHub Pages: `https://chmood110.github.io/1er_css_def/`
