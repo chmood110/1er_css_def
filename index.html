@@ -3,114 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introducción a la Programación Ladder para PLC</title>
+  <title>Estilos Responsivos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <nav class="navbar">
-    <div class="logo">PLC Ladder</div>
+    <div class="logo">Estilos Responsivos</div>
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
-      <a href="#conceptos">Conceptos</a>
-      <a href="#ejemplos">Ejemplos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#plc">PLC</a>
+      <a href="#ladder">Ladder</a>
+      <a href="#elementos">Elementos</a>
+      <a href="#ejemplo">Ejemplo</a>
+      <a href="#aplicaciones">Aplicaciones</a>
+      <a href="#contacto">Conclusión</a>
     </div>
   </nav>
 
   <header id="inicio" class="hero">
     <div class="hero-texto">
-      <h1>Programación Ladder para PLC</h1>
+      <h1>Introducción a la Programación Ladder para PLC</h1>
       <p>
-        Esta página muestra una introducción sencilla a la lógica ladder,
-        explicando qué es, para qué sirve y algunos ejemplos básicos.
+        Esta página presenta de manera sencilla qué es un PLC, qué es la lógica ladder,
+        cuáles son sus elementos principales y algunos ejemplos de uso en automatización industrial.
       </p>
-      <button>Ver más</button>
+      <button>Seguir leyendo</button>
     </div>
   </header>
 
   <main class="contenedor">
 
-    <section id="conceptos" class="seccion">
+    <section id="plc" class="seccion">
+      <h2>¿Qué es un PLC?</h2>
+      <p>
+        Un PLC, o controlador lógico programable, es un dispositivo electrónico utilizado
+        para automatizar procesos industriales. Su función principal es recibir señales de entrada,
+        procesarlas mediante un programa y generar señales de salida para controlar máquinas
+        o sistemas automáticos.
+      </p>
+      <p>
+        Por ejemplo, un PLC puede detectar que un botón fue presionado, revisar si se cumplen
+        ciertas condiciones y después activar una lámpara, un motor, una alarma o una válvula.
+      </p>
+    </section>
+
+    <section id="ladder" class="seccion">
       <h2>¿Qué es la programación ladder?</h2>
       <p>
-        La programación ladder es una forma de programar controladores lógicos programables
-        usando diagramas que se parecen a un circuito eléctrico. Se utiliza mucho en la
-        automatización industrial porque resulta visual y práctica para representar procesos.
+        La programación ladder es un lenguaje gráfico muy utilizado en los PLC.
+        Se llama así porque su estructura se parece a una escalera, con dos líneas laterales
+        y varias líneas horizontales que representan la lógica del programa.
+      </p>
+      <p>
+        Es uno de los lenguajes más conocidos en automatización porque resulta visual,
+        ordenado y guarda relación con los diagramas eléctricos tradicionales.
       </p>
     </section>
 
     <section class="seccion tarjetas-flex">
       <div class="tarjeta">
-        <h3>Contacto normalmente abierto</h3>
+        <h3>Entradas</h3>
         <p>
-          Se activa cuando recibe una señal. Es uno de los elementos más usados al empezar
-          a trabajar con ladder.
+          Son las señales que llegan al PLC desde sensores, botones, finales de carrera
+          o interruptores.
         </p>
       </div>
 
       <div class="tarjeta destacada">
-        <h3>Bobina</h3>
+        <h3>Lógica</h3>
         <p>
-          Representa una salida. Cuando la lógica de la línea se cumple, la bobina se energiza.
+          La lógica del programa decide qué debe hacer el PLC según las condiciones
+          que reciba desde las entradas.
         </p>
       </div>
 
       <div class="tarjeta">
-        <h3>Temporizador</h3>
+        <h3>Salidas</h3>
         <p>
-          Permite retrasar acciones dentro de un proceso automático, por ejemplo encender
-          un motor después de algunos segundos.
+          Son los dispositivos que el PLC controla, como motores, lámparas, válvulas,
+          alarmas o relevadores.
         </p>
       </div>
     </section>
 
-    <section id="ejemplos" class="seccion ejemplo-horizontal">
-      <img
-        src="img/ladder-ejemplo.png"
-        alt="Ejemplo de diagrama ladder"
-        class="imagen-ladder"
-      >
+    <section id="elementos" class="seccion">
+      <h2>Elementos básicos en Ladder</h2>
+
+      <div class="bloques-info">
+        <div class="bloque">
+          <h3>Contacto normalmente abierto</h3>
+          <p>
+            Permite el paso lógico cuando la entrada asociada está activada.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Contacto normalmente cerrado</h3>
+          <p>
+            Permite el paso lógico mientras la entrada no esté activada.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Bobina</h3>
+          <p>
+            Representa una salida que se activa cuando se cumple la condición de la línea.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Temporizador</h3>
+          <p>
+            Sirve para generar acciones con retardo o durante un tiempo determinado.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Contador</h3>
+          <p>
+            Ayuda a registrar cuántas veces ocurre un evento dentro del proceso.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Marcas internas</h3>
+          <p>
+            Son bits de memoria usados para guardar estados o condiciones dentro del programa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejemplo" class="seccion ejemplo-horizontal">
+      <img src="img/ladder-ejemplo.png" alt="Ejemplo de diagrama ladder" class="imagen-ladder">
       <div class="texto-ejemplo">
-        <h2>Ejemplo básico</h2>
+        <h2>Ejemplo sencillo de lógica ladder</h2>
         <p>
-          En un circuito ladder sencillo, un pulsador puede activar una salida como una lámpara.
-          Esto permite entender la relación entre entradas, condiciones y salidas dentro de un PLC.
+          Un ejemplo básico consiste en usar un pulsador como entrada y una lámpara como salida.
+          Cuando el pulsador se activa, el contacto permite el paso lógico y la bobina energiza
+          la lámpara.
+        </p>
+        <p>
+          Este tipo de ejemplo ayuda a entender cómo un PLC interpreta señales de entrada
+          y genera una acción de salida dentro de un sistema de control.
         </p>
       </div>
     </section>
 
-    <section class="seccion position-demo">
-      <h2>Ejemplo de position y z-index</h2>
+    <section class="seccion">
+      <h2>¿Cómo trabaja un PLC?</h2>
+      <p>
+        En términos generales, el PLC sigue un ciclo repetitivo. Primero revisa las entradas,
+        después ejecuta la lógica del programa y finalmente actualiza las salidas.
+      </p>
+
+      <div class="flujo-flex">
+        <div class="paso">1. Leer entradas</div>
+        <div class="paso">2. Procesar lógica</div>
+        <div class="paso">3. Activar salidas</div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2>Ejemplo básico de arranque y paro</h2>
+      <p>
+        Uno de los ejercicios más comunes al aprender ladder es el circuito de arranque y paro
+        de un motor. En este caso se utiliza un botón de arranque, un botón de paro y una salida
+        que representa el motor.
+      </p>
+      <p>
+        Cuando se presiona el botón de arranque, el motor se activa. Cuando se presiona el botón
+        de paro, el motor se desactiva. Este ejemplo ayuda a entender cómo trabajan las entradas,
+        las salidas y la lógica de control.
+      </p>
+
+      <div class="flujo-flex">
+        <div class="paso">Botón de arranque</div>
+        <div class="paso">Lógica de control</div>
+        <div class="paso">Motor encendido</div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2>Señales de entrada y salida</h2>
       <div class="contenedor-cajas">
-        <div class="caja caja1">Entrada</div>
-        <div class="caja caja2">Salida</div>
+        <div class="caja caja1">Entradas</div>
+        <div class="caja caja2">Salidas</div>
       </div>
       <p>
-        En este ejemplo, una caja se superpone sobre otra para mostrar el uso de
-        <strong>position</strong> y <strong>z-index</strong>.
+        En un PLC, las entradas representan señales que llegan desde botones, sensores o interruptores.
+        Las salidas corresponden a los dispositivos que el PLC controla, como lámparas, motores,
+        alarmas o válvulas.
       </p>
+      <p>
+        En esta parte de la página las cajas se superponen para representar visualmente
+        la relación entre entradas y salidas dentro de un sistema de control.
+      </p>
+    </section>
+
+    <section id="aplicaciones" class="seccion">
+      <h2>Aplicaciones comunes del PLC</h2>
+      <p>
+        Los PLC se utilizan en muchos procesos industriales porque permiten automatizar tareas
+        de forma confiable y ordenada.
+      </p>
+
+      <div class="bloques-responsive">
+        <div class="bloque">
+          <h3>Arranque de motores</h3>
+          <p>
+            Se usan para controlar el encendido, apagado, protecciones y secuencias de trabajo.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Bandas transportadoras</h3>
+          <p>
+            Permiten coordinar sensores, tiempos y movimientos en líneas de producción.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Sistemas de llenado</h3>
+          <p>
+            Ayudan a controlar válvulas, niveles, tiempos y secuencias automáticas.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Puertas automáticas</h3>
+          <p>
+            Detectan presencia, controlan tiempos y activan motores según la lógica programada.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Semáforos</h3>
+          <p>
+            Se programan tiempos de cambio y secuencias de luces por medio de temporizadores.
+          </p>
+        </div>
+
+        <div class="bloque">
+          <h3>Alarmas industriales</h3>
+          <p>
+            Se activan cuando una condición de riesgo o fallo es detectada por el sistema.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2>Ventajas de usar Ladder</h2>
+      <ul class="lista">
+        <li>Es visual y relativamente fácil de interpretar.</li>
+        <li>Se relaciona con diagramas eléctricos tradicionales.</li>
+        <li>Es muy utilizado en automatización industrial.</li>
+        <li>Permite programar procesos de forma clara y ordenada.</li>
+        <li>Facilita el mantenimiento y la detección de fallas.</li>
+      </ul>
     </section>
 
     <section class="seccion sticky-box">
       <h2>Dato importante</h2>
       <div class="nota-sticky">
-        En la programación ladder, la lógica se evalúa normalmente de izquierda a derecha
-        y de arriba hacia abajo.
+        En la lógica ladder normalmente se analiza de izquierda a derecha y de arriba hacia abajo.
       </div>
       <p>
-        Este pequeño bloque usa <strong>position: sticky</strong> para mantenerse visible
-        cuando se hace scroll dentro de la página.
+        Este detalle es importante porque ayuda a comprender el orden en el que el PLC
+        evalúa las condiciones dentro del programa.
       </p>
     </section>
 
     <section id="contacto" class="seccion">
       <h2>Conclusión</h2>
       <p>
-        La lógica ladder es una herramienta importante en automatización industrial.
-        Aprender sus elementos básicos ayuda a comprender mejor cómo se controlan procesos
-        en máquinas y sistemas reales.
+        La programación ladder es una herramienta muy importante en la automatización industrial.
+        Gracias a su estructura visual, es una de las formas más comunes de programar PLC
+        en sistemas donde intervienen sensores, actuadores, temporizadores y motores.
       </p>
+
     </section>
 
   </main>

@@ -1,19 +1,24 @@
-# Position con CSS
+# Estilos Responsivos
 Programación Ladder para PLC
 
-Este proyecto es una página web sencilla hecha con HTML y CSS. El tema principal es la programación ladder para PLC, mostrando de forma básica qué es, algunos conceptos importantes y un ejemplo visual.
+Este proyecto es una página web sencilla hecha con HTML y CSS. El tema principal es la programación ladder para PLC, incluyendo una explicación básica sobre qué es un PLC, qué es la lógica ladder, sus elementos principales, algunos ejemplos de uso y aplicaciones industriales.
 
 ## Contenido de la página
 
 La página incluye:
 
-- una barra de navegación
-- una sección principal de presentación
-- tarjetas con conceptos básicos
-- un ejemplo visual de ladder
-- una parte para practicar position y z-index
-- un footer de cookies
-- media queries para adaptar la página a pantallas pequeñas
+- barra de navegación
+- sección principal de presentación
+- explicación sobre PLC
+- explicación sobre ladder
+- elementos básicos de ladder
+- ejemplo visual
+- ciclo básico de trabajo de un PLC
+- ejemplo de arranque y paro
+- señales de entrada y salida
+- aplicaciones industriales
+- footer de cookies
+- estilos responsivos con media queries
 
 
 ## Tecnologías usadas

@@ -34,7 +34,8 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 15px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -63,7 +64,7 @@ body {
   background-color: white;
   padding: 30px;
   border-radius: 12px;
-  max-width: 700px;
+  max-width: 760px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
@@ -85,7 +86,7 @@ body {
   background-color: #1d4ed8;
 }
 
-/* Contenido */
+/* Contenedor */
 .contenedor {
   width: 90%;
   max-width: 1100px;
@@ -105,7 +106,7 @@ body {
   color: #1d4ed8;
 }
 
-/* Tarjetas con flexbox */
+/* Tarjetas */
 .tarjetas-flex {
   display: flex;
   gap: 20px;
@@ -128,6 +129,23 @@ body {
   background-color: #dbeafe;
 }
 
+/* Bloques */
+.bloques-info {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.bloque {
+  flex: 1;
+  min-width: 220px;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  padding: 18px;
+  border-radius: 10px;
+}
+
 /* Ejemplo horizontal */
 .ejemplo-horizontal {
   display: flex;
@@ -136,8 +154,9 @@ body {
 }
 
 .imagen-ladder {
-  width: 250px;
+  width: 260px;
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -145,7 +164,27 @@ body {
   flex: 1;
 }
 
-/* Position y z-index */
+/* Flujo */
+.flujo-flex {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.paso {
+  flex: 1;
+  min-width: 180px;
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Position y z-index aplicados al contenido */
 .contenedor-cajas {
   position: relative;
   height: 220px;
@@ -180,6 +219,19 @@ body {
   z-index: 1;
 }
 
+/* Lista */
+.lista {
+  padding-left: 20px;
+}
+
+/* Responsive blocks */
+.bloques-responsive {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
 /* Sticky */
 .nota-sticky {
   position: sticky;
@@ -192,7 +244,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* Footer principal */
+/* Footer */
 .footer-principal {
   text-align: center;
   background-color: #1f2937;
@@ -238,15 +290,32 @@ body {
 }
 
 /* Media queries */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
   .navbar {
     flex-direction: column;
     gap: 12px;
+    padding: 15px;
   }
 
   .nav-links {
-    flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .hero-texto {
+    padding: 20px;
+  }
+
+  .hero-texto h1 {
+    font-size: 28px;
   }
 
   .ejemplo-horizontal {
@@ -254,8 +323,71 @@ body {
     text-align: center;
   }
 
+  .tarjetas-flex,
+  .bloques-info,
+  .bloques-responsive,
+  .flujo-flex {
+    flex-direction: column;
+  }
+
   .cookie-footer {
     flex-direction: column;
     text-align: center;
+  }
+
+  .contenedor-cajas {
+    height: 260px;
+  }
+
+  .caja {
+    width: 130px;
+    height: 100px;
+    font-size: 14px;
+  }
+
+  .caja1 {
+    top: 25px;
+    left: 20px;
+  }
+
+  .caja2 {
+    top: 95px;
+    left: 90px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .ejemplo-horizontal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tarjetas-flex,
+  .bloques-info,
+  .bloques-responsive,
+  .flujo-flex {
+    justify-content: center;
+  }
+
+  .cookie-footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    font-size: 20px;
   }
 }
