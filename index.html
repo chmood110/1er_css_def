@@ -3,121 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyecto CSS Progresivo</title>
-
+  <title>Prácticas de CSS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet"
   />
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="fixed-contacto">Ayuda</div>
-
-  <header class="encabezado-principal">
-    <h1>Proyecto progresivo de CSS</h1>
+  <header class="encabezado">
+    <h1>Alineación con Flexbox</h1>
     <p>
-      Sitio de práctica que integra propiedades básicas, herencia, fuentes,
-      Flexbox y position en una sola página.
+      En esta página se muestran ejemplos sencillos de estilos en CSS,
+      incluyendo propiedades básicas, herencia, position y alineación con Flexbox.
     </p>
   </header>
 
-  <nav class="menu-sticky">
-    <a href="#propiedades">Propiedades básicas</a>
-    <a href="#herencia">Herencia y fuentes</a>
-    <a href="#flexbox">Flexbox</a>
+  <nav class="menu">
+    <a href="#basico">CSS básico</a>
+    <a href="#herencia">Herencia</a>
     <a href="#position">Position</a>
+    <a href="#flexbox">Flexbox</a>
   </nav>
 
   <main class="contenedor">
-    <section id="propiedades" class="tarjeta">
-      <h2>1. Propiedades básicas de CSS</h2>
-      <p class="texto-destacado">
-        Este párrafo usa color, fondo, padding y border para mostrar una
-        presentación más atractiva.
+    <section id="basico" class="tarjeta">
+      <h2>Propiedades básicas</h2>
+      <p class="destacado">
+        Este texto tiene color, fondo, borde y espacio interno para mostrar algunas propiedades básicas.
       </p>
-
-      <div class="caja-modelo">
-        Esta caja muestra el uso de width, margin, padding, border y box-sizing.
-      </div>
-
-      <p class="texto-centrado">
-        Este texto está centrado con <strong>text-align</strong>.
+      <p class="centrado">
+        Este párrafo está centrado.
       </p>
-
-      <button class="boton-ejemplo">Pasa el cursor aquí</button>
+      <button class="boton">Pasa el cursor aquí</button>
     </section>
 
-    <section id="herencia" class="tarjeta herencia-contenedor">
-      <h2>2. Herencia, especificidad y fuentes</h2>
+    <section id="herencia" class="tarjeta herencia">
+      <h2>Herencia y fuentes</h2>
       <p>
-        Este párrafo hereda color, tipografía y alineación desde el contenedor
-        padre.
+        Este texto hereda estilos desde el contenedor padre.
       </p>
       <p>
-        Este segundo párrafo también hereda esos estilos automáticamente.
+        Aquí también se puede notar que la fuente cambia en esta sección.
       </p>
-
-      <p class="texto-especial" id="texto-unico">
-        Este texto demuestra especificidad: el selector por id tiene prioridad
-        sobre la clase y sobre la etiqueta.
+      <p class="texto-clase" id="texto-id">
+        Este texto sirve para mostrar la especificidad entre etiqueta, clase e id.
       </p>
+    </section>
 
-      <div class="padre-borde">
-        <p class="hijo-borde">
-          Este párrafo hereda el borde del padre mediante
-          <strong>inherit</strong>.
-        </p>
+    <section id="position" class="tarjeta">
+      <h2>Position en CSS</h2>
+      <div class="contenedor-position">
+        <div class="caja-normal">Caja normal</div>
+        <div class="caja-absoluta">Caja absoluta</div>
       </div>
-
-      <div class="contenedor-color">
-        <p>Este párrafo hereda el color morado del contenedor.</p>
-        <p class="sin-herencia">
-          Este párrafo no hereda el color porque usa <strong>initial</strong>.
-        </p>
-      </div>
-
-      <p class="fuente-secundaria">
-        Este párrafo usa una fuente diferente para mostrar el uso de Google
-        Fonts.
+      <p>
+        La caja morada está colocada con position absolute dentro de un contenedor con position relative.
       </p>
     </section>
 
     <section id="flexbox" class="tarjeta">
-      <h2>3. Introducción a Flexbox</h2>
+      <h2>Alineación con Flexbox</h2>
       <p>
-        En esta sección se muestran ejemplos del uso de <strong>display: flex</strong>,
-        <strong>justify-content</strong>, <strong>align-items</strong>,
-        <strong>flex-direction</strong>, <strong>flex-wrap</strong> y
-        propiedades de crecimiento de los elementos.
+        En esta parte agregué ejemplos para practicar cómo se acomodan los elementos con Flexbox.
+        La idea fue ver cómo se pueden centrar, separar y ordenar cajas de una forma más fácil.
       </p>
 
-      <h3>Ejemplo básico</h3>
-      <div class="flex-contenedor flex-basico">
+      <h3>1. Elemento centrado</h3>
+      <p>
+        En este ejemplo se centra una sola caja tanto en horizontal como en vertical.
+      </p>
+      <div class="flex-demo flex-centro-uno">
+        <div class="item-flex">Centrado</div>
+      </div>
+
+      <h3>2. Varios elementos centrados</h3>
+      <p>
+        Aquí las tres cajas quedan alineadas al centro del contenedor.
+      </p>
+      <div class="flex-demo flex-centro-varios">
         <div class="item-flex">1</div>
         <div class="item-flex">2</div>
         <div class="item-flex">3</div>
       </div>
 
-      <h3>Centrado horizontal y vertical</h3>
-      <div class="flex-contenedor flex-centrado">
-        <div class="item-flex">A</div>
-        <div class="item-flex">B</div>
-        <div class="item-flex">C</div>
+      <h3>3. Un elemento alineado diferente</h3>
+      <p>
+        En este caso la segunda caja se acomoda diferente usando align-self.
+      </p>
+      <div class="flex-demo flex-align-self">
+        <div class="item-flex">1</div>
+        <div class="item-flex especial">2</div>
+        <div class="item-flex">3</div>
       </div>
 
-      <h3>Dirección en columna</h3>
-      <div class="flex-contenedor flex-columna">
-        <div class="item-flex">Uno</div>
-        <div class="item-flex">Dos</div>
-        <div class="item-flex">Tres</div>
-      </div>
-
-      <h3>Uso de flex-wrap</h3>
-      <div class="flex-contenedor flex-wrap-ejemplo">
+      <h3>4. Varias líneas con flex-wrap</h3>
+      <p>
+        Cuando no caben todas las cajas en una sola fila, pasan a la siguiente línea.
+      </p>
+      <div class="flex-demo flex-multilinea">
         <div class="item-flex">Caja 1</div>
         <div class="item-flex">Caja 2</div>
         <div class="item-flex">Caja 3</div>
@@ -126,48 +112,31 @@
         <div class="item-flex">Caja 6</div>
       </div>
 
-      <h3>flex-grow, flex-shrink y flex-basis</h3>
-      <div class="flex-contenedor flex-crecimiento">
-        <div class="item-flex grow-1">Elemento 1</div>
-        <div class="item-flex grow-2">Elemento 2</div>
-        <div class="item-flex grow-1">Elemento 3</div>
-      </div>
-    </section>
-
-    <section id="position" class="tarjeta">
-      <h2>4. Position en CSS</h2>
+      <h3>5. Espacio entre elementos</h3>
       <p>
-        En esta sección se muestran ejemplos prácticos de
-        <strong>relative</strong>, <strong>absolute</strong>,
-        <strong>fixed</strong> y <strong>sticky</strong>.
+        Aquí se usa justify-content para dejar espacio entre las cajas.
       </p>
-
-      <h3>Position relative y absolute</h3>
-      <div class="contenedor-position">
-        <div class="caja-base">Caja base</div>
-        <div class="caja-absoluta">Absolute</div>
+      <div class="flex-demo flex-space-between">
+        <div class="item-flex">A</div>
+        <div class="item-flex">B</div>
+        <div class="item-flex">C</div>
+        <div class="item-flex">D</div>
       </div>
 
-      <p class="explicacion-position">
-        La caja morada está posicionada con <strong>absolute</strong> dentro de
-        un contenedor con <strong>position: relative</strong>.
+      <h3>6. Un elemento más grande que los demás</h3>
+      <p>
+        En este ejemplo una caja ocupa más espacio porque tiene un valor mayor de flex-grow.
       </p>
-
-      <h3>Position sticky</h3>
-      <div class="sticky-demo">
-        Este bloque usa <strong>position: sticky</strong>.
-      </div>
-
-      <div class="contenido-largo">
-        <p>Este contenido está aquí para que puedas notar mejor el comportamiento visual.</p>
-        <p>Cuando haces scroll, el menú superior permanece visible gracias a sticky.</p>
-        <p>Además, el botón flotante “Ayuda” permanece fijo por el uso de fixed.</p>
+      <div class="flex-demo flex-crecimiento">
+        <div class="item-flex grow-1">1</div>
+        <div class="item-flex grow-2">2</div>
+        <div class="item-flex grow-1">3</div>
       </div>
     </section>
   </main>
 
   <footer class="pie">
-    <p>Introducción a Flexbox</p>
+    <p>Alineación con Flexbox</p>
   </footer>
 </body>
 </html>

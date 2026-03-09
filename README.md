@@ -1,27 +1,29 @@
-# Introducción a Flexbox en CSS
+# Alineación con Flexbox
 
-Este proyecto corresponde a una práctica de CSS enfocada en el uso de Flexbox. Se actualizó una página web creada previamente para demostrar cómo organizar, alinear y distribuir elementos dentro de un contenedor flexible.
+Este proyecto es una página web sencilla hecha con HTML y CSS para practicar varios temas básicos del diseño web.
 
-## Objetivo del proyecto
+## Qué contiene
 
-Agregar ejemplos prácticos relacionados con el tema de Flexbox en CSS, utilizando propiedades del contenedor y de los elementos hijos para mejorar la disposición del contenido en la página web.
+La página incluye ejemplos de:
 
-## Tecnologías utilizadas
+- propiedades básicas de CSS
+- herencia y especificidad
+- uso de position
+- alineación de elementos con Flexbox
 
-- HTML5
-- CSS3
+## Tecnologías usadas
+
+- HTML
+- CSS
 - Git
 - GitHub
 - GitHub Pages
-- Google Fonts
 
-## Estructura del proyecto
+## Archivos principales
 
-```bash
-1er_css_def/
-├── index.html
-├── styles.css
-└── README.md
+- `index.html`
+- `styles.css`
+- `README.md`
 
 ## Enlace
 GitHub Pages: `https://chmood110.github.io/1er_css_def/`
