@@ -1,100 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Introducción a CSS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propiedades básicas de CSS</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Mi proyecto: Introducción a CSS</h1>
-      <p class="subtitle">Práctica: herencia, especificidad y tipografía en CSS.</p>
-
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="#herencia">Herencia</a>
-        <a href="#especificidad">Especificidad</a>
-        <a href="#fuentes">Fuentes</a>
-      </nav>
-    </div>
+  <header class="encabezado">
+    <h1>Propiedades básicas de CSS</h1>
+    <p class="subtitulo">
+      Ejemplo práctico usando color, fondo, fuentes, alineación, márgenes, bordes, padding y box-sizing.
+    </p>
   </header>
 
-  <main class="site-main">
-    <div class="container">
-      <section class="card" id="herencia">
-        <h2>1) Herencia en CSS</h2>
-        <p>
-          Esta sección demuestra cómo los estilos del contenedor se “propagan” a sus hijos
-          (color, fuente, tamaño, line-height, etc.).
-        </p>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h2>1. Color y fondo</h2>
+      <p class="texto-color">
+        Este párrafo muestra cómo cambiar el color del texto y el fondo de un elemento usando CSS.
+      </p>
+    </section>
 
-        <div class="demo-box">
-          <p>Este párrafo hereda tipografía y color del contenedor.</p>
-          <p class="reset-color">
-            Este párrafo <strong>rompe</strong> la herencia del color con <code>initial</code>.
-          </p>
-          <p class="inherit-border">
-            Este párrafo fuerza heredar un <strong>borde</strong> con <code>inherit</code> (normalmente no se hereda).
-          </p>
-        </div>
-      </section>
+    <section class="tarjeta">
+      <h2>2. Tamaño y tipo de fuente</h2>
+      <p class="texto-fuente">
+        Aquí se utiliza <strong>font-size</strong> para cambiar el tamaño del texto y <strong>font-family</strong> para modificar la tipografía.
+      </p>
+    </section>
 
-      <section class="card" id="especificidad">
-        <h2>2) Especificidad</h2>
-        <p>
-          Aquí verás una regla de etiqueta (<code>p</code>), una de clase (<code>.highlight</code>)
-          y una de ID (<code>#mensaje</code>) compitiendo por el color.
-        </p>
+    <section class="tarjeta">
+      <h2>3. Alineación de texto</h2>
+      <p class="texto-centrado">
+        Este texto está centrado gracias a la propiedad <strong>text-align</strong>.
+      </p>
+    </section>
 
-        <p class="highlight" id="mensaje">
-          Este texto tiene <strong>clase</strong> y <strong>ID</strong>; gana el ID por mayor especificidad.
-        </p>
+    <section class="tarjeta caja-ejemplo">
+      <h2>4. Box Model</h2>
+      <p>
+        Esta caja tiene ancho definido, relleno interno, borde y margen externo para demostrar el modelo de caja.
+      </p>
+    </section>
 
-        <p class="highlight">
-          Este texto solo tiene clase; gana la clase sobre la etiqueta <code>p</code>.
-        </p>
-
-        <aside class="note" aria-label="Nota">
-          <h3>Nota</h3>
-          <p>
-            Evita abusar de <code>!important</code>. Mejor controla con selectores y orden de reglas.
-          </p>
-        </aside>
-      </section>
-
-      <section class="card" id="fuentes">
-        <h2>3) Fuentes y legibilidad</h2>
-        <p>
-          Se usa una pila de fuentes del sistema (rápida y sin depender de recursos externos).
-          También se ajustan <code>font-size</code>, <code>line-height</code> y <code>letter-spacing</code>.
-        </p>
-
-        <ul class="tips">
-          <li>Usa <code>rem</code> para tamaño de fuente (más accesible).</li>
-          <li>Aumenta <code>line-height</code> para lectura cómoda.</li>
-          <li>Usa contraste suficiente entre fondo y texto.</li>
-        </ul>
-
-        <div class="actions">
-          <button type="button" id="btnAccion">Botón de prueba</button>
-          <p class="small">Actividad: Introducción a CSS</p>
-        </div>
-      </section>
-    </div>
+    <section class="tarjeta">
+      <h2>5. Botón con hover</h2>
+      <button class="boton">Pasa el cursor aquí</button>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Hecho para practicar estructura HTML y estilos CSS (herencia y especificidad).</p>
-    </div>
+  <footer class="pie">
+    <p>CSS_actividad_2</p>
   </footer>
-
-  <script>
-    document.getElementById("btnAccion").addEventListener("click", function () {
-      alert("¡Listo! Estás probando interacción básica con el botón.");
-    });
-  </script>
 </body>
 </html>
