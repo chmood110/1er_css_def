@@ -4,17 +4,17 @@
 
 body {
   margin: 0;
-  background-color: #f4f6f8;
-  color: #1f2937;
   font-family: 'Roboto', sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
   line-height: 1.6;
 }
 
 .encabezado {
-  background-color: #1d4ed8;
+  background-color: #2563eb;
   color: white;
   text-align: center;
-  padding: 30px;
+  padding: 30px 20px;
 }
 
 .encabezado h1 {
@@ -24,78 +24,96 @@ body {
 
 .encabezado p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
-.contenedor {
+.contenedor-principal {
   width: 90%;
-  max-width: 950px;
+  max-width: 1000px;
   margin: 30px auto;
 }
 
 .tarjeta {
   background-color: white;
   border: 2px solid #d1d5db;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .tarjeta h2 {
   margin-top: 0;
   color: #1d4ed8;
-  font-size: 1.5rem;
 }
 
-/* HERENCIA */
-.herencia {
-  color: #0f766e;
-  font-family: 'Merriweather', serif;
-  text-align: left;
+.descripcion {
+  margin-top: 15px;
 }
 
-/* ESPECIFICIDAD */
-p {
-  color: blue;
+/* Base flex */
+.flex-contenedor {
+  display: flex;
+  gap: 12px;
+  background-color: #e5e7eb;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 12px;
 }
 
-.texto-especial {
-  color: green;
-}
-
-#texto-unico {
-  color: red;
-  font-weight: bold;
-}
-
-/* FUENTES */
-.fuente-secundaria {
-  font-family: 'Merriweather', serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.03em;
-}
-
-/* INHERIT */
-.padre-borde {
-  border: 3px dashed #7c3aed;
-  padding: 15px;
-}
-
-.hijo-borde {
-  border: inherit;
-  padding: 10px;
-}
-
-/* INITIAL */
-.contenedor-color {
-  color: purple;
-  padding: 10px;
-  background-color: #f3e8ff;
+.item {
+  background-color: #2563eb;
+  color: white;
+  padding: 20px;
   border-radius: 8px;
+  text-align: center;
+  min-width: 80px;
 }
 
-.sin-herencia {
-  color: initial;
+/* Ejemplo básico */
+.ejemplo-basico {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Centrado */
+.ejemplo-centrado {
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+/* Columna */
+.ejemplo-columna {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Wrap */
+.ejemplo-wrap {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.ejemplo-wrap .item {
+  width: 140px;
+}
+
+/* Crecimiento */
+.ejemplo-crecimiento {
+  display: flex;
+}
+
+.ejemplo-crecimiento .item {
+  flex-basis: 120px;
+  flex-shrink: 1;
+}
+
+.item-grow-1 {
+  flex-grow: 1;
+}
+
+.item-grow-2 {
+  flex-grow: 2;
 }
 
 .pie {

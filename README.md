@@ -1,17 +1,10 @@
-# Herencia en CSS
+# Introducción a Flexbox en CSS
 
-Este proyecto corresponde a una práctica de CSS enfocada en el uso de herencia, especificidad y fuentes. Se actualizó una página web creada previamente para demostrar cómo los estilos pueden heredarse entre elementos, cómo funciona la prioridad entre selectores y cómo aplicar fuentes externas en un sitio web.
+Este proyecto corresponde a una práctica de CSS enfocada en el uso de Flexbox. Se actualizó una página web creada previamente para demostrar cómo organizar, alinear y distribuir elementos dentro de un contenedor flexible.
 
 ## Objetivo del proyecto
 
-Agregar ejemplos prácticos relacionados con:
-
-- herencia en CSS
-- especificidad
-- uso de fuentes
-- propiedades como `inherit` e `initial`
-
-Además, se actualizó el repositorio en GitHub y su publicación en GitHub Pages.
+Agregar ejemplos prácticos relacionados con el tema de Flexbox en CSS, utilizando propiedades del contenedor y de los elementos hijos para mejorar la disposición del contenido en la página web.
 
 ## Tecnologías utilizadas
 

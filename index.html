@@ -3,71 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Herencia, especificidad y fuentes en CSS</title>
+  <title>Flexbox en CSS</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="encabezado">
-    <h1>Herencia en CSS</h1>
+    <h1>Introducción a Flexbox</h1>
     <p>
-      En esta página se muestran ejemplos de herencia, especificidad y uso de fuentes.
+      En esta práctica se muestran ejemplos del uso de Flexbox en CSS para organizar y alinear elementos.
     </p>
   </header>
 
-  <main class="contenedor">
-    <section class="tarjeta herencia">
-      <h2>1. Ejemplo de herencia</h2>
+  <main class="contenedor-principal">
+    <section class="tarjeta">
+      <h2>¿Qué es Flexbox?</h2>
       <p>
-        Este texto hereda el color y la fuente del contenedor padre.
-      </p>
-      <p>
-        Este segundo párrafo también hereda esos mismos estilos.
+        Flexbox es un sistema de diseño en CSS que permite organizar elementos de forma flexible dentro de un contenedor. Es útil para alinear, distribuir y adaptar elementos horizontal o verticalmente.
       </p>
     </section>
 
     <section class="tarjeta">
-      <h2>2. Ejemplo de especificidad</h2>
-      <p class="texto-especial" id="texto-unico">
-        Este texto tiene clase e id. El estilo aplicado depende de la especificidad.
-      </p>
-    </section>
-
-    <section class="tarjeta">
-      <h2>3. Ejemplo de fuentes</h2>
-      <p class="fuente-secundaria">
-        Este párrafo utiliza una fuente diferente para mostrar cómo se puede cambiar la tipografía en CSS.
-      </p>
-    </section>
-
-    <section class="tarjeta">
-      <h2>4. Herencia controlada</h2>
-      <div class="padre-borde">
-        <p class="hijo-borde">
-          Este párrafo hereda el borde del contenedor con la propiedad <strong>inherit</strong>.
-        </p>
+      <h2>Ejemplo 1: display flex</h2>
+      <div class="flex-contenedor ejemplo-basico">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
       </div>
+      <p class="descripcion">
+        Aquí los elementos se colocan uno junto a otro gracias a <strong>display: flex</strong>.
+      </p>
     </section>
 
     <section class="tarjeta">
-      <h2>5. Reinicio de herencia</h2>
-      <div class="contenedor-color">
-        <p>
-          Este párrafo hereda el color morado del contenedor.
-        </p>
-        <p class="sin-herencia">
-          Este párrafo no hereda el color porque usa <strong>initial</strong>.
-        </p>
+      <h2>Ejemplo 2: justify-content center y align-items center</h2>
+      <div class="flex-contenedor ejemplo-centrado">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
       </div>
+      <p class="descripcion">
+        En este ejemplo los elementos están centrados horizontal y verticalmente.
+      </p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Ejemplo 3: flex-direction column</h2>
+      <div class="flex-contenedor ejemplo-columna">
+        <div class="item">Uno</div>
+        <div class="item">Dos</div>
+        <div class="item">Tres</div>
+      </div>
+      <p class="descripcion">
+        Con <strong>flex-direction: column</strong> los elementos se acomodan en forma vertical.
+      </p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Ejemplo 4: flex-wrap</h2>
+      <div class="flex-contenedor ejemplo-wrap">
+        <div class="item">Caja 1</div>
+        <div class="item">Caja 2</div>
+        <div class="item">Caja 3</div>
+        <div class="item">Caja 4</div>
+        <div class="item">Caja 5</div>
+        <div class="item">Caja 6</div>
+      </div>
+      <p class="descripcion">
+        Aquí se usa <strong>flex-wrap: wrap</strong> para que los elementos pasen a otra fila cuando no hay suficiente espacio.
+      </p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Ejemplo 5: flex-grow, flex-shrink y flex-basis</h2>
+      <div class="flex-contenedor ejemplo-crecimiento">
+        <div class="item item-grow-1">Elemento 1</div>
+        <div class="item item-grow-2">Elemento 2</div>
+        <div class="item item-grow-1">Elemento 3</div>
+      </div>
+      <p class="descripcion">
+        El segundo elemento ocupa más espacio porque tiene un valor mayor de <strong>flex-grow</strong>.
+      </p>
     </section>
   </main>
 
   <footer class="pie">
-    <p>Herencia en CSS</p>
+    <p>Introducción a Flexbox</p>
   </footer>
 </body>
 </html>
