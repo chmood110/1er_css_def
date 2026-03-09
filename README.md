@@ -1,10 +1,17 @@
-# Propiedades básicas de CSS
+# Herencia en CSS
 
-Este proyecto es una práctica de introducción a CSS en la que se aplican estilos básicos a una página web utilizando un archivo CSS externo. El objetivo fue actualizar una página creada previamente en HTML para mejorar su presentación visual mediante propiedades fundamentales de CSS.
+Este proyecto corresponde a una práctica de CSS enfocada en el uso de herencia, especificidad y fuentes. Se actualizó una página web creada previamente para demostrar cómo los estilos pueden heredarse entre elementos, cómo funciona la prioridad entre selectores y cómo aplicar fuentes externas en un sitio web.
 
 ## Objetivo del proyecto
 
-Desarrollar una página web sencilla que demuestre el uso de propiedades básicas de CSS, tales como color, fondo, tamaño de fuente, tipo de letra, alineación del texto, márgenes, bordes, relleno y box-sizing. Además, se actualizó el repositorio en GitHub y su publicación en GitHub Pages.
+Agregar ejemplos prácticos relacionados con:
+
+- herencia en CSS
+- especificidad
+- uso de fuentes
+- propiedades como `inherit` e `initial`
+
+Además, se actualizó el repositorio en GitHub y su publicación en GitHub Pages.
 
 ## Tecnologías utilizadas
 
@@ -13,15 +20,15 @@ Desarrollar una página web sencilla que demuestre el uso de propiedades básica
 - Git
 - GitHub
 - GitHub Pages
+- Google Fonts
 
 ## Estructura del proyecto
 
 ```bash
-2do_css_def/
+1er_css_def/
 ├── index.html
 ├── styles.css
 └── README.md
-
 
 ## Enlace
 GitHub Pages: `https://chmood110.github.io/1er_css_def/`

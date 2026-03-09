@@ -4,9 +4,10 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background-color: #f4f6f8;
-  color: #222;
+  color: #1f2937;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
 }
 
 .encabezado {
@@ -17,82 +18,90 @@ body {
 }
 
 .encabezado h1 {
-  font-size: 36px;
   margin: 0 0 10px 0;
+  font-size: 2rem;
 }
 
-.subtitulo {
-  font-size: 18px;
+.encabezado p {
   margin: 0;
+  font-size: 1.1rem;
 }
 
 .contenedor {
   width: 90%;
-  max-width: 900px;
+  max-width: 950px;
   margin: 30px auto;
 }
 
 .tarjeta {
   background-color: white;
   border: 2px solid #d1d5db;
+  border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
 }
 
 .tarjeta h2 {
-  color: #1d4ed8;
-  font-size: 24px;
   margin-top: 0;
+  color: #1d4ed8;
+  font-size: 1.5rem;
 }
 
-.texto-color {
-  color: #b91c1c;
-  background-color: #fee2e2;
+/* HERENCIA */
+.herencia {
+  color: #0f766e;
+  font-family: 'Merriweather', serif;
+  text-align: left;
+}
+
+/* ESPECIFICIDAD */
+p {
+  color: blue;
+}
+
+.texto-especial {
+  color: green;
+}
+
+#texto-unico {
+  color: red;
+  font-weight: bold;
+}
+
+/* FUENTES */
+.fuente-secundaria {
+  font-family: 'Merriweather', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+
+/* INHERIT */
+.padre-borde {
+  border: 3px dashed #7c3aed;
+  padding: 15px;
+}
+
+.hijo-borde {
+  border: inherit;
   padding: 10px;
-  border-radius: 6px;
 }
 
-.texto-fuente {
-  font-family: Georgia, serif;
-  font-size: 20px;
-  color: #374151;
-}
-
-.texto-centrado {
-  text-align: center;
-  font-size: 18px;
-  background-color: #dbeafe;
-  padding: 12px;
-  border: 1px solid #93c5fd;
-}
-
-.caja-ejemplo {
-  width: 100%;
-  padding: 25px;
-  border: 3px solid #2563eb;
-  margin: 25px 0;
-  background-color: #eff6ff;
-}
-
-.boton {
-  background-color: #2563eb;
-  color: white;
-  font-size: 16px;
-  padding: 12px 20px;
-  border: none;
+/* INITIAL */
+.contenedor-color {
+  color: purple;
+  padding: 10px;
+  background-color: #f3e8ff;
   border-radius: 8px;
-  cursor: pointer;
 }
 
-.boton:hover {
-  background-color: #1e40af;
+.sin-herencia {
+  color: initial;
 }
 
 .pie {
-  text-align: center;
   background-color: #111827;
   color: white;
+  text-align: center;
   padding: 20px;
   margin-top: 30px;
 }
