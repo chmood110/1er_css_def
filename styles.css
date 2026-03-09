@@ -1,39 +1,193 @@
-body {
-  font-family: system-ui, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #0b1220; 
-  color: #e7eefc;      
+/* =========================
+   ESTILOS BASE (HERENCIA)
+   ========================= */
+:root{
+  --bg: #0b1220;
+  --surface: rgba(255,255,255,0.06);
+  --text: #e7eefc;
+  --muted: rgba(231,238,252,0.75);
+  --border: rgba(231,238,252,0.18);
+  --accent: #7c3aed;
 }
 
-header, footer {
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  padding: 0;
+
+  /* Heredables (se propagan a hijos) */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+
+  background: var(--bg);
+}
+
+.container{
+  max-width: 980px;
+  margin: 0 auto;
   padding: 16px;
+}
+
+.site-header, .site-footer{
+  text-align: center; /* heredable */
+  padding: 18px 0;
+}
+
+.subtitle{
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+/* =========================
+   NAVEGACIÓN
+   ========================= */
+.site-nav{
+  margin-top: 12px;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.site-nav a{
+  color: inherit;            /* fuerza a heredar color */
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.site-nav a:hover{
+  filter: brightness(1.08);
+}
+
+/* =========================
+   TARJETAS Y SECCIONES
+   ========================= */
+.site-main{
+  padding: 10px 0 26px;
+}
+
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 14px 0;
+}
+
+.card h2{
+  margin: 0 0 10px;
+  letter-spacing: 0.2px;
+}
+
+p{
+  /* selector de tipo (baja especificidad) */
+  color: var(--text);
+  margin: 10px 0;
+}
+
+/* =========================
+   DEMO HERENCIA
+   ========================= */
+.demo-box{
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+
+  /* Se define borde aquí para demostrar "inherit" en un hijo */
+  border: 2px dashed rgba(231,238,252,0.35);
+
+  /* Estos sí se heredan */
+  color: rgba(231,238,252,0.92);
+  font-size: 0.98rem;
+}
+
+/* Rompe la herencia del color (initial vuelve al valor por defecto del navegador) */
+.reset-color{
+  color: initial;
+}
+
+/* border no se hereda normalmente, aquí lo forzamos */
+.inherit-border{
+  border: inherit;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* =========================
+   ESPECIFICIDAD (clase vs ID)
+   ========================= */
+.highlight{
+  /* clase (10 pts) */
+  color: rgba(34, 197, 94, 0.95);
+  font-weight: 700;
+}
+
+#mensaje{
+  /* ID (100 pts): gana sobre .highlight y sobre p */
+  color: rgba(239, 68, 68, 0.95);
+}
+
+/* =========================
+   ASIDE / NOTA
+   ========================= */
+.note{
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  background: rgba(239, 68, 68, 0.07);
+}
+
+.note h3{
+  margin: 0 0 6px;
+}
+
+/* =========================
+   LISTAS Y TEXTO PEQUEÑO
+   ========================= */
+.tips{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.small{
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* =========================
+   BOTÓN
+   ========================= */
+.actions{
+  margin-top: 12px;
   text-align: center;
 }
 
-main {
-  padding: 16px;
-  text-align: center; 
-}
-
-/*botón*/
-button {
+button{
   padding: 10px 14px;
   cursor: pointer;
+
   border: 0;
   border-radius: 10px;
-  background: #7c3aed;
+  background: var(--accent);
   color: #ffffff;
   font-weight: 600;
+
   transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-button:hover {
-  transform: translateY(-2px); 
+button:hover{
+  transform: translateY(-2px);
   filter: brightness(1.05);
 }
 
-button:focus {
-  outline: 3px solid rgba(34, 197, 94, 0.5); 
+button:focus{
+  outline: 3px solid rgba(34, 197, 94, 0.5);
   outline-offset: 3px;
 }

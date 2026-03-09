@@ -4,20 +4,97 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Introducción a CSS</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header>
-    <h1>Mi proyecto: Introducción a CSS</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mi proyecto: Introducción a CSS</h1>
+      <p class="subtitle">Práctica: herencia, especificidad y tipografía en CSS.</p>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#herencia">Herencia</a>
+        <a href="#especificidad">Especificidad</a>
+        <a href="#fuentes">Fuentes</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <p>Esta página es parte de la práctica para publicar en GitHub Pages.</p>
-    <button>Botón de prueba</button>
+  <main class="site-main">
+    <div class="container">
+      <section class="card" id="herencia">
+        <h2>1) Herencia en CSS</h2>
+        <p>
+          Esta sección demuestra cómo los estilos del contenedor se “propagan” a sus hijos
+          (color, fuente, tamaño, line-height, etc.).
+        </p>
+
+        <div class="demo-box">
+          <p>Este párrafo hereda tipografía y color del contenedor.</p>
+          <p class="reset-color">
+            Este párrafo <strong>rompe</strong> la herencia del color con <code>initial</code>.
+          </p>
+          <p class="inherit-border">
+            Este párrafo fuerza heredar un <strong>borde</strong> con <code>inherit</code> (normalmente no se hereda).
+          </p>
+        </div>
+      </section>
+
+      <section class="card" id="especificidad">
+        <h2>2) Especificidad</h2>
+        <p>
+          Aquí verás una regla de etiqueta (<code>p</code>), una de clase (<code>.highlight</code>)
+          y una de ID (<code>#mensaje</code>) compitiendo por el color.
+        </p>
+
+        <p class="highlight" id="mensaje">
+          Este texto tiene <strong>clase</strong> y <strong>ID</strong>; gana el ID por mayor especificidad.
+        </p>
+
+        <p class="highlight">
+          Este texto solo tiene clase; gana la clase sobre la etiqueta <code>p</code>.
+        </p>
+
+        <aside class="note" aria-label="Nota">
+          <h3>Nota</h3>
+          <p>
+            Evita abusar de <code>!important</code>. Mejor controla con selectores y orden de reglas.
+          </p>
+        </aside>
+      </section>
+
+      <section class="card" id="fuentes">
+        <h2>3) Fuentes y legibilidad</h2>
+        <p>
+          Se usa una pila de fuentes del sistema (rápida y sin depender de recursos externos).
+          También se ajustan <code>font-size</code>, <code>line-height</code> y <code>letter-spacing</code>.
+        </p>
+
+        <ul class="tips">
+          <li>Usa <code>rem</code> para tamaño de fuente (más accesible).</li>
+          <li>Aumenta <code>line-height</code> para lectura cómoda.</li>
+          <li>Usa contraste suficiente entre fondo y texto.</li>
+        </ul>
+
+        <div class="actions">
+          <button type="button" id="btnAccion">Botón de prueba</button>
+          <p class="small">Actividad: Introducción a CSS</p>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
-     <p>Actividad: Introducción a CSS </p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Hecho para practicar estructura HTML y estilos CSS (herencia y especificidad).</p>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById("btnAccion").addEventListener("click", function () {
+      alert("¡Listo! Estás probando interacción básica con el botón.");
+    });
+  </script>
 </body>
 </html>
