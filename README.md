@@ -1,15 +1,20 @@
-# Alineación con Flexbox
+# Position con CSS
+Programación Ladder para PLC
 
-Este proyecto es una página web sencilla hecha con HTML y CSS para practicar varios temas básicos del diseño web.
+Este proyecto es una página web sencilla hecha con HTML y CSS. El tema principal es la programación ladder para PLC, mostrando de forma básica qué es, algunos conceptos importantes y un ejemplo visual.
 
-## Qué contiene
+## Contenido de la página
 
-La página incluye ejemplos de:
+La página incluye:
 
-- propiedades básicas de CSS
-- herencia y especificidad
-- uso de position
-- alineación de elementos con Flexbox
+- una barra de navegación
+- una sección principal de presentación
+- tarjetas con conceptos básicos
+- un ejemplo visual de ladder
+- una parte para practicar position y z-index
+- un footer de cookies
+- media queries para adaptar la página a pantallas pequeñas
+
 
 ## Tecnologías usadas
 
