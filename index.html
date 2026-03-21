@@ -1,304 +1,1201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estilos Responsivos</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Guía técnica de introducción a la programación Ladder para Controladores Lógicos Programables (PLC). Fundamentos, elementos, flujo de trabajo y aplicaciones industriales." />
+  <title>Programación Ladder para PLC — Guía Técnica</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo">Estilos Responsivos</div>
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#plc">PLC</a>
-      <a href="#ladder">Ladder</a>
-      <a href="#elementos">Elementos</a>
-      <a href="#ejemplo">Ejemplo</a>
-      <a href="#aplicaciones">Aplicaciones</a>
-      <a href="#contacto">Conclusión</a>
-    </div>
-  </nav>
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
 
-  <header id="inicio" class="hero">
-    <div class="hero-texto">
-      <h1>Introducción a la Programación Ladder para PLC</h1>
-      <p>
-        Esta página presenta de manera sencilla qué es un PLC, qué es la lógica ladder,
-        cuáles son sus elementos principales y algunos ejemplos de uso en automatización industrial.
-      </p>
-      <button>Seguir leyendo</button>
+      <!-- Marca -->
+      <a href="#inicio" class="navbar__brand" aria-label="Inicio">
+        <div class="navbar__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="4" width="2" height="10" fill="#C87D3E"/>
+            <rect x="5" y="6" width="4" height="2" stroke="#C87D3E" stroke-width="1.2" fill="none"/>
+            <rect x="5" y="10" width="4" height="2" stroke="#C87D3E" stroke-width="1.2" fill="none" stroke-dasharray="1 0.5"/>
+            <line x1="3" y1="7" x2="5" y2="7" stroke="#C87D3E" stroke-width="1.2"/>
+            <line x1="9" y1="7" x2="13" y2="7" stroke="#C87D3E" stroke-width="1.2"/>
+            <line x1="3" y1="11" x2="5" y2="11" stroke="#C87D3E" stroke-width="1.2"/>
+            <line x1="9" y1="11" x2="13" y2="11" stroke="#C87D3E" stroke-width="1.2"/>
+            <rect x="13" y="4" width="2" height="10" fill="#C87D3E"/>
+          </svg>
+        </div>
+        <div class="navbar__brand-text">
+          <span class="navbar__brand-name">Ladder PLC</span>
+          <span class="navbar__brand-sub">Guía Técnica</span>
+        </div>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="navbar__nav" role="navigation" aria-label="Navegación principal">
+        <a href="#plc" class="navbar__link">Fundamentos</a>
+        <a href="#ladder" class="navbar__link">Lógica Ladder</a>
+        <a href="#elementos" class="navbar__link">Elementos</a>
+        <a href="#ejemplo" class="navbar__link">Ejemplo</a>
+        <a href="#aplicaciones" class="navbar__link">Aplicaciones</a>
+        <span class="navbar__badge" aria-label="Nivel de contenido">Nivel 01</span>
+      </nav>
+
     </div>
   </header>
 
-  <main class="contenedor">
 
-    <section id="plc" class="seccion">
-      <h2>¿Qué es un PLC?</h2>
-      <p>
-        Un PLC, o controlador lógico programable, es un dispositivo electrónico utilizado
-        para automatizar procesos industriales. Su función principal es recibir señales de entrada,
-        procesarlas mediante un programa y generar señales de salida para controlar máquinas
-        o sistemas automáticos.
-      </p>
-      <p>
-        Por ejemplo, un PLC puede detectar que un botón fue presionado, revisar si se cumplen
-        ciertas condiciones y después activar una lámpara, un motor, una alarma o una válvula.
-      </p>
-    </section>
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <main id="inicio">
+  <section class="hero" aria-labelledby="hero-title">
 
-    <section id="ladder" class="seccion">
-      <h2>¿Qué es la programación ladder?</h2>
-      <p>
-        La programación ladder es un lenguaje gráfico muy utilizado en los PLC.
-        Se llama así porque su estructura se parece a una escalera, con dos líneas laterales
-        y varias líneas horizontales que representan la lógica del programa.
-      </p>
-      <p>
-        Es uno de los lenguajes más conocidos en automatización porque resulta visual,
-        ordenado y guarda relación con los diagramas eléctricos tradicionales.
-      </p>
-    </section>
+    <!-- Cuadrícula de fondo técnica -->
+    <div class="hero__grid-bg" aria-hidden="true"></div>
+    <div class="hero__fade" aria-hidden="true"></div>
 
-    <section class="seccion tarjetas-flex">
-      <div class="tarjeta">
-        <h3>Entradas</h3>
-        <p>
-          Son las señales que llegan al PLC desde sensores, botones, finales de carrera
-          o interruptores.
+    <div class="hero__inner">
+
+      <!-- Contenido principal -->
+      <div class="hero__content">
+        <div class="hero__meta" aria-hidden="true">
+          <span class="hero__meta-tag">IEC 61131-3</span>
+          <span class="hero__meta-line"></span>
+          <span class="hero__meta-tag">Automatización Industrial</span>
+        </div>
+
+        <h1 class="hero__headline" id="hero-title">
+          Programación<br />
+          <em>Ladder</em><br />
+          para PLC
+        </h1>
+
+        <p class="hero__description">
+          Una guía estructurada sobre los fundamentos de la lógica de contactos: el lenguaje de programación
+          más extendido en sistemas de control industrial. Desde los conceptos básicos hasta circuitos funcionales reales.
         </p>
-      </div>
 
-      <div class="tarjeta destacada">
-        <h3>Lógica</h3>
-        <p>
-          La lógica del programa decide qué debe hacer el PLC según las condiciones
-          que reciba desde las entradas.
-        </p>
-      </div>
-
-      <div class="tarjeta">
-        <h3>Salidas</h3>
-        <p>
-          Son los dispositivos que el PLC controla, como motores, lámparas, válvulas,
-          alarmas o relevadores.
-        </p>
-      </div>
-    </section>
-
-    <section id="elementos" class="seccion">
-      <h2>Elementos básicos en Ladder</h2>
-
-      <div class="bloques-info">
-        <div class="bloque">
-          <h3>Contacto normalmente abierto</h3>
-          <p>
-            Permite el paso lógico cuando la entrada asociada está activada.
-          </p>
-        </div>
-
-        <div class="bloque">
-          <h3>Contacto normalmente cerrado</h3>
-          <p>
-            Permite el paso lógico mientras la entrada no esté activada.
-          </p>
-        </div>
-
-        <div class="bloque">
-          <h3>Bobina</h3>
-          <p>
-            Representa una salida que se activa cuando se cumple la condición de la línea.
-          </p>
-        </div>
-
-        <div class="bloque">
-          <h3>Temporizador</h3>
-          <p>
-            Sirve para generar acciones con retardo o durante un tiempo determinado.
-          </p>
-        </div>
-
-        <div class="bloque">
-          <h3>Contador</h3>
-          <p>
-            Ayuda a registrar cuántas veces ocurre un evento dentro del proceso.
-          </p>
-        </div>
-
-        <div class="bloque">
-          <h3>Marcas internas</h3>
-          <p>
-            Son bits de memoria usados para guardar estados o condiciones dentro del programa.
-          </p>
+        <div class="hero__actions">
+          <a href="#plc" class="btn btn--primary">Comenzar</a>
+          <a href="#elementos" class="btn btn--ghost">Ver elementos</a>
         </div>
       </div>
-    </section>
 
-    <section id="ejemplo" class="seccion ejemplo-horizontal">
-      <img src="img/ladder-ejemplo.png" alt="Ejemplo de diagrama ladder" class="imagen-ladder">
-      <div class="texto-ejemplo">
-        <h2>Ejemplo sencillo de lógica ladder</h2>
-        <p>
-          Un ejemplo básico consiste en usar un pulsador como entrada y una lámpara como salida.
-          Cuando el pulsador se activa, el contacto permite el paso lógico y la bobina energiza
-          la lámpara.
-        </p>
-        <p>
-          Este tipo de ejemplo ayuda a entender cómo un PLC interpreta señales de entrada
-          y genera una acción de salida dentro de un sistema de control.
-        </p>
+      <!-- Visual técnico: diagrama Ladder -->
+      <div class="hero__visual" aria-hidden="true">
+
+        <!-- Diagrama Ladder animado / ilustrativo -->
+        <div class="ladder-diagram">
+          <div class="ladder-diagram__header">
+            <span class="ladder-diagram__title">Rung View — Ejemplo 01</span>
+            <span class="ladder-diagram__status">
+              <span class="status-dot"></span>
+              RUN MODE
+            </span>
+          </div>
+
+          <!-- Rung 0: Contacto NO + Bobina -->
+          <div class="aparo-rung">
+            <span class="rung-id">R0</span>
+            <div class="rung-power"></div>
+            <div class="rung-track">
+              <div class="track-element">
+                <span class="sym sym--no">[ ]</span>
+                <span class="addr">I0.0</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="track-element">
+                <span class="sym sym--out">( )</span>
+                <span class="addr">Q0.0</span>
+              </div>
+            </div>
+            <div class="rung-power-r"></div>
+          </div>
+
+          <!-- Rung 1: Arranque + NC Paro + Bobina con enclave -->
+          <div class="aparo-rung">
+            <span class="rung-id">R1</span>
+            <div class="rung-power"></div>
+            <div class="rung-track">
+              <div class="track-element">
+                <span class="sym sym--no">[ ]</span>
+                <span class="addr">I0.1</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="track-element">
+                <span class="sym sym--nc">[/]</span>
+                <span class="addr">I0.2</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="track-element">
+                <span class="sym sym--out">( )</span>
+                <span class="addr">Q0.1</span>
+              </div>
+            </div>
+            <div class="rung-power-r"></div>
+          </div>
+
+          <!-- Rung 2: Temporizador -->
+          <div class="aparo-rung">
+            <span class="rung-id">R2</span>
+            <div class="rung-power"></div>
+            <div class="rung-track">
+              <div class="track-element">
+                <span class="sym sym--no">[ ]</span>
+                <span class="addr">Q0.1</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="track-element">
+                <span class="sym sym--out" style="padding: 1px 3px; font-size: 9px;">TON</span>
+                <span class="addr">T0.0</span>
+              </div>
+            </div>
+            <div class="rung-power-r"></div>
+          </div>
+
+        </div><!-- /.ladder-diagram -->
+
+        <!-- Métricas contextuales -->
+        <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-value">5</span>
+            <span class="hero__metric-label">Lenguajes IEC</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">01</span>
+            <span class="hero__metric-label">Ladder Logic</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">60+</span>
+            <span class="hero__metric-label">Años en uso</span>
+          </div>
+        </div>
+
+      </div><!-- /.hero__visual -->
+    </div><!-- /.hero__inner -->
+  </section>
+
+
+  <!-- ============================================================
+       SECCIÓN 01: QUÉ ES UN PLC
+       ============================================================ -->
+  <section id="plc" class="section" aria-labelledby="plc-title">
+    <div class="container">
+
+      <div class="section__header">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 01 — Fundamentos</span>
+          <h2 class="section__title" id="plc-title">
+            El Controlador Lógico<br /><em>Programable</em>
+          </h2>
+          <p class="section__subtitle">
+            Un PLC es un computador industrial diseñado específicamente para operar en entornos de manufactura y automatización,
+            donde la confiabilidad, la velocidad de respuesta y la durabilidad son requisitos no negociables.
+          </p>
+        </div>
+        <span class="section__index" aria-hidden="true">01</span>
       </div>
-    </section>
 
-    <section class="seccion">
-      <h2>¿Cómo trabaja un PLC?</h2>
-      <p>
-        En términos generales, el PLC sigue un ciclo repetitivo. Primero revisa las entradas,
-        después ejecuta la lógica del programa y finalmente actualiza las salidas.
-      </p>
+      <div class="plc-intro">
 
-      <div class="flujo-flex">
-        <div class="paso">1. Leer entradas</div>
-        <div class="paso">2. Procesar lógica</div>
-        <div class="paso">3. Activar salidas</div>
-      </div>
-    </section>
+        <!-- Columna izquierda: definición y contexto -->
+        <div class="plc-intro__text">
 
-    <section class="seccion">
-      <h2>Ejemplo básico de arranque y paro</h2>
-      <p>
-        Uno de los ejercicios más comunes al aprender ladder es el circuito de arranque y paro
-        de un motor. En este caso se utiliza un botón de arranque, un botón de paro y una salida
-        que representa el motor.
-      </p>
-      <p>
-        Cuando se presiona el botón de arranque, el motor se activa. Cuando se presiona el botón
-        de paro, el motor se desactiva. Este ejemplo ayuda a entender cómo trabajan las entradas,
-        las salidas y la lógica de control.
-      </p>
+          <div class="definition-block">
+            <p class="definition-block__label">Definición técnica</p>
+            <p class="definition-block__text">
+              Un PLC (Programmable Logic Controller) es un dispositivo electrónico de estado sólido diseñado para el
+              control secuencial de máquinas y procesos industriales, con capacidad de operar en condiciones
+              severas de temperatura, vibración e interferencia electromagnética.
+            </p>
+          </div>
 
-      <div class="flujo-flex">
-        <div class="paso">Botón de arranque</div>
-        <div class="paso">Lógica de control</div>
-        <div class="paso">Motor encendido</div>
-      </div>
-    </section>
+          <br />
 
-    <section class="seccion">
-      <h2>Señales de entrada y salida</h2>
-      <div class="contenedor-cajas">
-        <div class="caja caja1">Entradas</div>
-        <div class="caja caja2">Salidas</div>
-      </div>
-      <p>
-        En un PLC, las entradas representan señales que llegan desde botones, sensores o interruptores.
-        Las salidas corresponden a los dispositivos que el PLC controla, como lámparas, motores,
-        alarmas o válvulas.
-      </p>
-      <p>
-        En esta parte de la página las cajas se superponen para representar visualmente
-        la relación entre entradas y salidas dentro de un sistema de control.
-      </p>
-    </section>
-
-    <section id="aplicaciones" class="seccion">
-      <h2>Aplicaciones comunes del PLC</h2>
-      <p>
-        Los PLC se utilizan en muchos procesos industriales porque permiten automatizar tareas
-        de forma confiable y ordenada.
-      </p>
-
-      <div class="bloques-responsive">
-        <div class="bloque">
-          <h3>Arranque de motores</h3>
+          <h3>Arquitectura de operación</h3>
           <p>
-            Se usan para controlar el encendido, apagado, protecciones y secuencias de trabajo.
+            A diferencia de un computador de propósito general, el PLC ejecuta un ciclo determinista y repetitivo
+            denominado <strong>ciclo de scan</strong>. En cada ciclo, el controlador lee el estado de todas sus
+            entradas, ejecuta el programa de usuario y actualiza las salidas físicas.
+          </p>
+          <p>
+            Esta arquitectura garantiza tiempos de respuesta predecibles, un requisito fundamental en aplicaciones
+            de seguridad y control de proceso crítico.
+          </p>
+
+          <br />
+
+          <ul class="tech-list">
+            <li class="tech-list__item">
+              <span class="tech-list__marker">01</span>
+              <span>Immune a interferencias eléctricas y vibraciones mecánicas típicas del entorno industrial.</span>
+            </li>
+            <li class="tech-list__item">
+              <span class="tech-list__marker">02</span>
+              <span>Ciclos de scan en el rango de 1–100 ms según fabricante y tamaño del programa.</span>
+            </li>
+            <li class="tech-list__item">
+              <span class="tech-list__marker">03</span>
+              <span>Capacidad de expansión modular mediante tarjetas de E/S digitales y analógicas.</span>
+            </li>
+            <li class="tech-list__item">
+              <span class="tech-list__marker">04</span>
+              <span>Compatible con protocolos industriales: Modbus, Profibus, EtherNet/IP, entre otros.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna derecha: especificaciones técnicas -->
+        <div>
+          <div class="plc-specs">
+            <div class="spec-row">
+              <div class="spec-cell spec-cell--label">
+                <p class="spec-label">Fabricante líder</p>
+                <p class="spec-value">Siemens, Allen-Bradley, Mitsubishi</p>
+              </div>
+              <div class="spec-cell">
+                <p class="spec-label">Estándar de programación</p>
+                <p class="spec-value">IEC 61131-3</p>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-cell spec-cell--label">
+                <p class="spec-label">Lenguajes disponibles</p>
+                <p class="spec-value">Ladder, FBD, SFC, ST, IL</p>
+              </div>
+              <div class="spec-cell">
+                <p class="spec-label">Ciclo de ejecución</p>
+                <p class="spec-value">Determinista (scan cíclico)</p>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-cell spec-cell--label">
+                <p class="spec-label">Entornos de operación</p>
+                <p class="spec-value">-10 °C a +60 °C típico</p>
+              </div>
+              <div class="spec-cell">
+                <p class="spec-label">Tipos de E/S</p>
+                <p class="spec-value">Digital, analógica, de alta velocidad</p>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-cell spec-cell--label">
+                <p class="spec-label">Comunicación</p>
+                <p class="spec-value">Modbus RTU/TCP, Profinet, EtherNet/IP</p>
+              </div>
+              <div class="spec-cell">
+                <p class="spec-label">Voltaje de operación</p>
+                <p class="spec-value">24 VDC / 120-240 VAC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.plc-intro -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       SECCIÓN 02: LÓGICA LADDER
+       ============================================================ -->
+  <section id="ladder" class="section section--secondary" aria-labelledby="ladder-title">
+    <div class="container">
+
+      <div class="section__header">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 02 — Lenguaje</span>
+          <h2 class="section__title" id="ladder-title">
+            Lógica de <em>Contactos</em><br />Ladder
+          </h2>
+          <p class="section__subtitle">
+            La representación gráfica de la lógica de relés: un lenguaje diseñado para que técnicos e ingenieros
+            eléctricos puedan programar sin conocimientos de software convencional.
+          </p>
+        </div>
+        <span class="section__index" aria-hidden="true">02</span>
+      </div>
+
+      <div class="ladder-overview">
+
+        <!-- Visual: callout box principal -->
+        <div class="ladder-overview__visual">
+          <div class="callout-box">
+            <h3 class="callout-box__title">Origen del lenguaje</h3>
+            <p class="callout-box__text">
+              La lógica Ladder nació como la representación gráfica directa de los circuitos de relés electromagnéticos
+              que controlaban maquinaria industrial antes de la aparición del PLC. Su estructura visual en forma de
+              escalera (ladder) simula los diagramas eléctricos de control que los técnicos ya conocían.
+            </p>
+            <p class="callout-box__text">
+              Esto permitió una transición natural de la lógica de contactos físicos a la lógica de contactos
+              programada, sin exigir a los técnicos aprender un lenguaje de programación formal.
+            </p>
+
+            <br />
+
+            <ul class="tech-list">
+              <li class="tech-list__item">
+                <span class="tech-list__marker">--</span>
+                <span>Dos rieles verticales representan las líneas de alimentación (L+ / L-).</span>
+              </li>
+              <li class="tech-list__item">
+                <span class="tech-list__marker">--</span>
+                <span>Las líneas horizontales entre los rieles se denominan <strong>rungs</strong> (escalones).</span>
+              </li>
+              <li class="tech-list__item">
+                <span class="tech-list__marker">--</span>
+                <span>Cada rung contiene contactos (condiciones) y bobinas (acciones) conectados en lógica eléctrica.</span>
+              </li>
+              <li class="tech-list__item">
+                <span class="tech-list__marker">--</span>
+                <span>El flujo de corriente de izquierda a derecha determina si una bobina se activa o no.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Texto complementario -->
+        <div>
+          <span class="eyebrow" style="margin-bottom: 1.5rem; display: inline-flex;">Estructura visual</span>
+
+          <h3 style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--text-primary); letter-spacing: -0.01em; line-height: var(--leading-snug); margin-bottom: var(--space-5);">
+            Un programa es una secuencia de rungs evaluados en orden
+          </h3>
+
+          <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-5);">
+            El PLC evalúa cada rung de arriba a abajo durante cada ciclo de scan. Si las condiciones
+            (contactos) de un rung permiten el paso de la señal lógica, la bobina asociada se energiza.
+          </p>
+
+          <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-8);">
+            Esta evaluación secuencial, predecible y cíclica es lo que hace al Ladder adecuado para
+            automatización de procesos con requisitos de tiempo real y diagnóstico visual directo.
+          </p>
+
+          <ul class="tech-list">
+            <li class="tech-list__item">
+              <span class="tech-list__marker" style="color: var(--tech-bright);">NO</span>
+              <span><strong>Contacto Normalmente Abierto:</strong> conduce cuando la variable asociada es verdadera (bit = 1).</span>
+            </li>
+            <li class="tech-list__item">
+              <span class="tech-list__marker" style="color: var(--accent);">NC</span>
+              <span><strong>Contacto Normalmente Cerrado:</strong> conduce cuando la variable asociada es falsa (bit = 0).</span>
+            </li>
+            <li class="tech-list__item">
+              <span class="tech-list__marker" style="color: var(--signal-on);">OUT</span>
+              <span><strong>Bobina de salida:</strong> activa la variable asociada cuando recibe señal lógica por el rung.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.ladder-overview -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       SECCIÓN 03: ENTRADAS / PROCESO / SALIDAS
+       ============================================================ -->
+  <section class="section flow-section" aria-labelledby="flow-title">
+    <div class="container">
+
+      <div class="section__header section__header--centered">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 03 — Arquitectura funcional</span>
+          <h2 class="section__title" id="flow-title">
+            El modelo <em>E — P — S</em>
+          </h2>
+          <p class="section__subtitle">
+            Todo sistema controlado por PLC opera bajo el mismo principio fundamental:
+            leer señales del mundo físico, procesar la lógica programada y generar respuestas en las salidas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Flujo E/P/S -->
+      <div class="eps-flow">
+
+        <!-- ENTRADAS -->
+        <div class="eps-column">
+          <div class="eps-column__header eps-column__header--entrada">
+            <div class="eps-icon eps-icon--entrada">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="eps-column__label eps-column__label--entrada">Entradas (I)</span>
+          </div>
+          <div class="eps-column__body">
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--entrada"></span>
+              Pulsadores y botones
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--entrada"></span>
+              Sensores inductivos
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--entrada"></span>
+              Finales de carrera
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--entrada"></span>
+              Fotoceldas
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--entrada"></span>
+              Encoders y contadores
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--entrada"></span>
+              Sensores de temperatura
+            </div>
+          </div>
+        </div>
+
+        <!-- Flecha -->
+        <div class="eps-arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 10H16M16 10L12 6M16 10L12 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- PROCESO -->
+        <div class="eps-column">
+          <div class="eps-column__header eps-column__header--proceso">
+            <div class="eps-icon eps-icon--proceso">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 8H10M8 6V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="eps-column__label eps-column__label--proceso">Proceso (CPU)</span>
+          </div>
+          <div class="eps-column__body">
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--proceso"></span>
+              Lectura de entradas
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--proceso"></span>
+              Ejecución del programa Ladder
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--proceso"></span>
+              Evaluación de condiciones
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--proceso"></span>
+              Lógica de temporizadores
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--proceso"></span>
+              Control de contadores
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--proceso"></span>
+              Actualización de salidas
+            </div>
+          </div>
+        </div>
+
+        <!-- Flecha -->
+        <div class="eps-arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 10H16M16 10L12 6M16 10L12 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- SALIDAS -->
+        <div class="eps-column">
+          <div class="eps-column__header eps-column__header--salida">
+            <div class="eps-icon eps-icon--salida">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="eps-column__label eps-column__label--salida">Salidas (Q)</span>
+          </div>
+          <div class="eps-column__body">
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--salida"></span>
+              Motores y variadores
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--salida"></span>
+              Contactores y relés
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--salida"></span>
+              Electroválvulas
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--salida"></span>
+              Señales de alarma
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--salida"></span>
+              Indicadores luminosos
+            </div>
+            <div class="eps-item">
+              <span class="eps-item__dot eps-item__dot--salida"></span>
+              Actuadores neumáticos
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.eps-flow -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       SECCIÓN 04: ELEMENTOS BÁSICOS DE LADDER
+       ============================================================ -->
+  <section id="elementos" class="section section--secondary" aria-labelledby="elements-title">
+    <div class="container">
+
+      <div class="section__header">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 04 — Instrucciones</span>
+          <h2 class="section__title" id="elements-title">
+            Elementos básicos<br />del lenguaje
+          </h2>
+          <p class="section__subtitle">
+            Las instrucciones fundamentales que conforman cualquier programa Ladder. Dominarlos
+            permite construir la mayoría de los circuitos de automatización industrial.
+          </p>
+        </div>
+        <span class="section__index" aria-hidden="true">04</span>
+      </div>
+
+      <div class="elements-grid">
+
+        <!-- Contacto NO -->
+        <div class="element-card">
+          <span class="element-card__symbol element-card__symbol--tech">[ &nbsp; ]</span>
+          <h3 class="element-card__name">Contacto Normalmente Abierto</h3>
+          <p class="element-card__desc">
+            Conduce señal lógica cuando el bit de la variable asociada vale 1.
+            En reposo no conduce. Es el elemento de condición más común en Ladder.
+            Equivale a un contacto NA en lógica de relés.
+          </p>
+          <span class="element-card__addr">Dirección: I0.x / M0.x / Q0.x</span>
+        </div>
+
+        <!-- Contacto NC -->
+        <div class="element-card">
+          <span class="element-card__symbol">[/]</span>
+          <h3 class="element-card__name">Contacto Normalmente Cerrado</h3>
+          <p class="element-card__desc">
+            Conduce señal lógica cuando el bit de la variable asociada vale 0.
+            En reposo conduce. Se utiliza para condiciones de parada, seguridad o enclavamiento.
+          </p>
+          <span class="element-card__addr">Dirección: I0.x / M0.x</span>
+        </div>
+
+        <!-- Bobina de salida -->
+        <div class="element-card">
+          <span class="element-card__symbol">( &nbsp; )</span>
+          <h3 class="element-card__name">Bobina de Salida</h3>
+          <p class="element-card__desc">
+            Activa una variable (bit = 1) cuando la condición del rung es verdadera.
+            Su posición es siempre al extremo derecho del rung. No puede usarse como contacto de entrada.
+          </p>
+          <span class="element-card__addr">Dirección: Q0.x / M0.x</span>
+        </div>
+
+        <!-- Bobina SET -->
+        <div class="element-card">
+          <span class="element-card__symbol">(S)</span>
+          <h3 class="element-card__name">Bobina SET</h3>
+          <p class="element-card__desc">
+            Activa un bit y lo mantiene en 1 aunque la condición del rung pase a ser falsa.
+            Solo puede desactivarse mediante una instrucción RESET. Útil para memorizar estados.
+          </p>
+          <span class="element-card__addr">Dirección: M0.x / Q0.x</span>
+        </div>
+
+        <!-- Bobina RESET -->
+        <div class="element-card">
+          <span class="element-card__symbol">(R)</span>
+          <h3 class="element-card__name">Bobina RESET</h3>
+          <p class="element-card__desc">
+            Desactiva (pone a 0) un bit previamente activado por SET. Es el complemento directo
+            de la instrucción SET. Ambas conforman la lógica de enclavamiento biestable.
+          </p>
+          <span class="element-card__addr">Dirección: M0.x / Q0.x</span>
+        </div>
+
+        <!-- Temporizador -->
+        <div class="element-card">
+          <span class="element-card__symbol element-card__symbol--tech">TON</span>
+          <h3 class="element-card__name">Temporizador con Retardo a la Conexión</h3>
+          <p class="element-card__desc">
+            Activa su bit de salida después de transcurrido el tiempo preseleccionado, siempre que
+            la condición de entrada se mantenga activa durante dicho tiempo. Esencial para secuencias temporizadas.
+          </p>
+          <span class="element-card__addr">Dirección: T0.x — PT, ET, Q</span>
+        </div>
+
+        <!-- Contador -->
+        <div class="element-card">
+          <span class="element-card__symbol element-card__symbol--tech">CTU</span>
+          <h3 class="element-card__name">Contador Ascendente</h3>
+          <p class="element-card__desc">
+            Incrementa su valor interno en cada flanco ascendente de la señal de conteo.
+            Al alcanzar el valor preestablecido (PV), activa su bit de salida. Requiere una entrada de reset.
+          </p>
+          <span class="element-card__addr">Dirección: C0.x — PV, CV, Q</span>
+        </div>
+
+        <!-- Flanco ascendente -->
+        <div class="element-card">
+          <span class="element-card__symbol element-card__symbol--tech">[P]</span>
+          <h3 class="element-card__name">Detección de Flanco Ascendente</h3>
+          <p class="element-card__desc">
+            Genera un pulso de duración igual a un ciclo de scan en el momento en que la señal
+            de entrada hace la transición de 0 a 1. Permite detectar el instante del cambio, no el estado.
+          </p>
+          <span class="element-card__addr">Duración: 1 ciclo de scan</span>
+        </div>
+
+      </div><!-- /.elements-grid -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       SECCIÓN 05: FLUJO DE TRABAJO DEL PLC
+       ============================================================ -->
+  <section class="section" aria-labelledby="workflow-title">
+    <div class="container">
+
+      <div class="section__header section__header--centered">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 05 — Ciclo de operación</span>
+          <h2 class="section__title" id="workflow-title">
+            El ciclo de <em>scan</em> del PLC
+          </h2>
+          <p class="section__subtitle">
+            Cada vez que el PLC ejecuta un ciclo completo, realiza exactamente cinco operaciones en orden fijo.
+            Este comportamiento determinista es la base de la seguridad y predictibilidad en automatización.
+          </p>
+        </div>
+      </div>
+
+      <div class="workflow">
+        <div class="workflow__connector" aria-hidden="true"></div>
+        <div class="workflow__steps">
+
+          <div class="workflow-step">
+            <div class="workflow-step__number">01</div>
+            <p class="workflow-step__name">Autodiagnóstico</p>
+            <p class="workflow-step__desc">Verificación interna del hardware y la memoria del sistema.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step__number">02</div>
+            <p class="workflow-step__name">Lectura de Entradas</p>
+            <p class="workflow-step__desc">Captura el estado físico de todas las entradas y los almacena en la imagen de proceso.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step__number">03</div>
+            <p class="workflow-step__name">Ejecución del Programa</p>
+            <p class="workflow-step__desc">Evalúa cada rung del programa Ladder con los datos de la imagen de proceso.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step__number">04</div>
+            <p class="workflow-step__name">Actualización de Salidas</p>
+            <p class="workflow-step__desc">Transfiere los resultados calculados a los módulos de salida físicos.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step__number">05</div>
+            <p class="workflow-step__name">Comunicación</p>
+            <p class="workflow-step__desc">Gestiona el intercambio de datos con redes, HMI y dispositivos externos.</p>
+          </div>
+
+        </div><!-- /.workflow__steps -->
+      </div><!-- /.workflow -->
+
+    </div><!-- /.container -->
+  </section>
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       SECCIÓN 06: EJEMPLO PRÁCTICO — ARRANQUE Y PARO
+       ============================================================ -->
+  <section id="ejemplo" class="section section--secondary" aria-labelledby="example-title">
+    <div class="container">
+
+      <div class="section__header">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 06 — Circuito práctico</span>
+          <h2 class="section__title" id="example-title">
+            Circuito de <em>arranque</em><br />y paro de motor
+          </h2>
+          <p class="section__subtitle">
+            El circuito de arranque-paro con enclavamiento es el ejemplo canónico de la lógica Ladder.
+            Dominar este circuito es el punto de partida para cualquier automatismo industrial real.
+          </p>
+        </div>
+        <span class="section__index" aria-hidden="true">06</span>
+      </div>
+
+      <div class="example-section">
+
+        <!-- Columna izquierda: explicación -->
+        <div class="example-section__content">
+
+          <h3>Principio de operación</h3>
+          <p>
+            El circuito utiliza tres señales de entrada: un pulsador de <strong>arranque</strong> (NO),
+            un pulsador de <strong>paro</strong> (NC) y un <strong>contacto de enclavamiento</strong>
+            que mantiene activo el motor después de soltar el botón de arranque.
+          </p>
+          <p>
+            La lógica garantiza que el motor solo arranque cuando el paro no está activo y que,
+            una vez arrancado, permanezca en marcha hasta que se pulse el botón de paro explícitamente.
+          </p>
+
+          <!-- Diagrama del ejemplo de arranque/paro -->
+          <div class="example-diagram">
+            <div class="diagram-header">
+              <span class="diagram-title">Ladder — Arranque / Paro con enclave</span>
+              <span class="diagram-chip">Motor 01</span>
+            </div>
+
+            <!-- Rung 1: Arranque + Enclave + NC Paro = Bobina Motor -->
+            <div class="aparo-rung">
+              <span class="rung-id">R1</span>
+              <div class="rung-power"></div>
+              <div class="rung-track">
+                <div class="track-element">
+                  <span class="sym sym--no">[ ]</span>
+                  <span class="addr">I0.0</span>
+                </div>
+                <div class="spacer"></div>
+                <div class="track-element">
+                  <span class="sym sym--nc">[/]</span>
+                  <span class="addr">I0.1</span>
+                </div>
+                <div class="spacer"></div>
+                <div class="track-element">
+                  <span class="sym sym--out">( )</span>
+                  <span class="addr">Q0.0</span>
+                </div>
+              </div>
+              <div class="rung-power-r"></div>
+            </div>
+
+            <!-- Rung 2: Enclavamiento (contacto Q0.0 en paralelo con I0.0) -->
+            <div class="aparo-rung">
+              <span class="rung-id">R2</span>
+              <div class="rung-power"></div>
+              <div class="rung-track">
+                <div class="track-element">
+                  <span class="sym sym--no" style="background: rgba(76,175,125,0.08); border-color: rgba(76,175,125,0.3); color: var(--signal-on);">[ ]</span>
+                  <span class="addr" style="color: var(--signal-on);">Q0.0</span>
+                </div>
+                <div class="spacer"></div>
+                <div class="track-element" style="font-size: 9px; color: var(--text-muted); padding: 0 var(--space-3);">
+                  <span>Enclavamiento</span>
+                </div>
+                <div class="spacer"></div>
+              </div>
+              <div class="rung-power-r"></div>
+            </div>
+
+            <!-- Nota de diagnóstico -->
+            <div style="margin-top: var(--space-4); padding: var(--space-3) var(--space-4); background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: var(--radius-sm);">
+              <p style="font-family: var(--font-mono); font-size: 9px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px;">Nota técnica</p>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6;">
+                El contacto NO de Q0.0 en R2 crea el enclavamiento: mientras el motor esté en marcha,
+                mantiene activo el rung R1 incluso después de soltar el pulsador de arranque I0.0.
+              </p>
+            </div>
+
+          </div><!-- /.example-diagram -->
+
+        </div><!-- /.example-section__content -->
+
+        <!-- Columna derecha: tabla de señales -->
+        <div>
+          <table class="signal-table" aria-label="Tabla de señales del circuito de arranque y paro">
+            <caption style="display:none">Señales del circuito de arranque y paro de motor</caption>
+            <thead>
+              <tr>
+                <th scope="col">Dirección</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="mono">I0.0</span></td>
+                <td>Pulsador ARRANQUE</td>
+                <td><span class="signal-badge signal-badge--entrada">Entrada</span></td>
+              </tr>
+              <tr>
+                <td><span class="mono">I0.1</span></td>
+                <td>Pulsador PARO</td>
+                <td><span class="signal-badge signal-badge--entrada">Entrada</span></td>
+              </tr>
+              <tr>
+                <td><span class="mono">I0.2</span></td>
+                <td>Guardamotor / Térmica</td>
+                <td><span class="signal-badge signal-badge--entrada">Entrada</span></td>
+              </tr>
+              <tr>
+                <td><span class="mono">Q0.0</span></td>
+                <td>Contactor Motor M1</td>
+                <td><span class="signal-badge signal-badge--salida">Salida</span></td>
+              </tr>
+              <tr>
+                <td><span class="mono">Q0.1</span></td>
+                <td>Piloto luminoso MARCHA</td>
+                <td><span class="signal-badge signal-badge--salida">Salida</span></td>
+              </tr>
+              <tr>
+                <td><span class="mono">M0.0</span></td>
+                <td>Memoria estado motor</td>
+                <td><span class="signal-badge signal-badge--interno">Interno</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+
+          <ul class="tech-list">
+            <li class="tech-list__item">
+              <span class="tech-list__marker">01</span>
+              <span>El pulsador de PARO siempre se conecta como contacto <strong>NC</strong> por razones de seguridad. Una falla en el cable cortará la señal, deteniendo el motor.</span>
+            </li>
+            <li class="tech-list__item">
+              <span class="tech-list__marker">02</span>
+              <span>La protección térmica (guardamotor) debe incluirse siempre como interlocking en el circuito de seguridad.</span>
+            </li>
+            <li class="tech-list__item">
+              <span class="tech-list__marker">03</span>
+              <span>Este circuito es la base de todo control secuencial industrial: se expande con temporizadores, contadores y condiciones adicionales.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.example-section -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       SECCIÓN 07: SEÑALES DE ENTRADA Y SALIDA
+       ============================================================ -->
+  <section class="section" aria-labelledby="io-title">
+    <div class="container">
+
+      <div class="section__header">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 07 — Módulos de E/S</span>
+          <h2 class="section__title" id="io-title">
+            Señales de <em>entrada</em><br />y salida
+          </h2>
+          <p class="section__subtitle">
+            La interfaz entre el PLC y el mundo físico: los módulos de entradas/salidas que conectan
+            la lógica programada con los sensores y actuadores reales de la instalación.
+          </p>
+        </div>
+        <span class="section__index" aria-hidden="true">07</span>
+      </div>
+
+      <div class="io-grid">
+
+        <!-- Panel de Entradas -->
+        <div class="io-panel">
+          <div class="io-panel__header io-panel__header--entrada">
+            <span class="io-panel__icon io-panel__icon--entrada"></span>
+            <span class="io-panel__title io-panel__title--entrada">Módulo de Entradas Digitales</span>
+          </div>
+          <div class="io-panel__list" role="list">
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">I0.0</span>
+              <span class="io-row__name">Pulsador de arranque (NO)</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">I0.1</span>
+              <span class="io-row__name">Pulsador de paro (NC)</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">I0.2</span>
+              <span class="io-row__name">Protección térmica / guardamotor</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">I0.3</span>
+              <span class="io-row__name">Sensor inductivo posición A</span>
+              <span class="io-row__type">NPN/PNP</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">I0.4</span>
+              <span class="io-row__name">Final de carrera final de recorrido</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">I0.5</span>
+              <span class="io-row__name">Señal de nivel alto (flotador)</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel de Salidas -->
+        <div class="io-panel">
+          <div class="io-panel__header io-panel__header--salida">
+            <span class="io-panel__icon io-panel__icon--salida"></span>
+            <span class="io-panel__title io-panel__title--salida">Módulo de Salidas Digitales</span>
+          </div>
+          <div class="io-panel__list" role="list">
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">Q0.0</span>
+              <span class="io-row__name">Contactor motor M1 — Marcha</span>
+              <span class="io-row__type">Relé</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">Q0.1</span>
+              <span class="io-row__name">Piloto verde — Motor en marcha</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">Q0.2</span>
+              <span class="io-row__name">Piloto rojo — Motor detenido/fallo</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">Q0.3</span>
+              <span class="io-row__name">Electroválvula circuito hidráulico</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">Q0.4</span>
+              <span class="io-row__name">Alarma sonora — Fallo de proceso</span>
+              <span class="io-row__type">Relé</span>
+            </div>
+            <div class="io-row" role="listitem">
+              <span class="io-row__addr">Q0.5</span>
+              <span class="io-row__name">Señal habilitación variador de frecuencia</span>
+              <span class="io-row__type">24 VDC</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.io-grid -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
+       SECCIÓN 08: APLICACIONES INDUSTRIALES
+       ============================================================ -->
+  <section id="aplicaciones" class="section section--secondary" aria-labelledby="app-title">
+    <div class="container">
+
+      <div class="section__header">
+        <div>
+          <span class="eyebrow section__eyebrow">Sección 08 — Industria</span>
+          <h2 class="section__title" id="app-title">
+            Aplicaciones <em>industriales</em><br />del PLC y Ladder
+          </h2>
+          <p class="section__subtitle">
+            La lógica Ladder está presente en prácticamente todos los sectores industriales modernos.
+            Desde la manufactura discreta hasta el control de procesos continuos.
+          </p>
+        </div>
+        <span class="section__index" aria-hidden="true">08</span>
+      </div>
+
+      <div class="applications-grid">
+
+        <div class="app-card">
+          <span class="app-card__index">01</span>
+          <h3 class="app-card__name">Manufactura y Ensamble</h3>
+          <p class="app-card__desc">
+            Control de líneas de producción, robots de ensamble, transportadoras y sistemas pick-and-place.
+            Secuenciación de etapas, detección de piezas y control de calidad en línea.
           </p>
         </div>
 
-        <div class="bloque">
-          <h3>Bandas transportadoras</h3>
-          <p>
-            Permiten coordinar sensores, tiempos y movimientos en líneas de producción.
+        <div class="app-card">
+          <span class="app-card__index">02</span>
+          <h3 class="app-card__name">Industria Alimentaria</h3>
+          <p class="app-card__desc">
+            Dosificación de ingredientes, control de temperatura y presión en hornos y autoclaves,
+            sistemas de llenado y etiquetado, y gestión de recetas productivas.
           </p>
         </div>
 
-        <div class="bloque">
-          <h3>Sistemas de llenado</h3>
-          <p>
-            Ayudan a controlar válvulas, niveles, tiempos y secuencias automáticas.
+        <div class="app-card">
+          <span class="app-card__index">03</span>
+          <h3 class="app-card__name">Tratamiento de Agua</h3>
+          <p class="app-card__desc">
+            Automatización de bombas y válvulas, control de niveles en depósitos, dosificación química,
+            monitoreo de parámetros de calidad y gestión de secuencias de filtración.
           </p>
         </div>
 
-        <div class="bloque">
-          <h3>Puertas automáticas</h3>
-          <p>
-            Detectan presencia, controlan tiempos y activan motores según la lógica programada.
+        <div class="app-card">
+          <span class="app-card__index">04</span>
+          <h3 class="app-card__name">Energía y Utilities</h3>
+          <p class="app-card__desc">
+            Control de subestaciones eléctricas, gestión de grupos electrógenos, automatización
+            de sistemas de distribución de gas, vapor y aire comprimido en plantas industriales.
           </p>
         </div>
 
-        <div class="bloque">
-          <h3>Semáforos</h3>
-          <p>
-            Se programan tiempos de cambio y secuencias de luces por medio de temporizadores.
+        <div class="app-card">
+          <span class="app-card__index">05</span>
+          <h3 class="app-card__name">Industria Petroquímica</h3>
+          <p class="app-card__desc">
+            Control de procesos de refinado, gestión de válvulas de seguridad, monitoreo de
+            condiciones críticas de temperatura y presión, y lógica de parada de emergencia (ESD).
           </p>
         </div>
 
-        <div class="bloque">
-          <h3>Alarmas industriales</h3>
-          <p>
-            Se activan cuando una condición de riesgo o fallo es detectada por el sistema.
+        <div class="app-card">
+          <span class="app-card__index">06</span>
+          <h3 class="app-card__name">Edificios e Infraestructura</h3>
+          <p class="app-card__desc">
+            Control de sistemas HVAC, gestión de ascensores y escaleras mecánicas, automatización
+            de sistemas contra incendios, acceso y seguridad perimetral en instalaciones.
           </p>
         </div>
-      </div>
-    </section>
 
-    <section class="seccion">
-      <h2>Ventajas de usar Ladder</h2>
-      <ul class="lista">
-        <li>Es visual y relativamente fácil de interpretar.</li>
-        <li>Se relaciona con diagramas eléctricos tradicionales.</li>
-        <li>Es muy utilizado en automatización industrial.</li>
-        <li>Permite programar procesos de forma clara y ordenada.</li>
-        <li>Facilita el mantenimiento y la detección de fallas.</li>
-      </ul>
-    </section>
-
-    <section class="seccion sticky-box">
-      <h2>Dato importante</h2>
-      <div class="nota-sticky">
-        En la lógica ladder normalmente se analiza de izquierda a derecha y de arriba hacia abajo.
-      </div>
-      <p>
-        Este detalle es importante porque ayuda a comprender el orden en el que el PLC
-        evalúa las condiciones dentro del programa.
-      </p>
-    </section>
-
-    <section id="contacto" class="seccion">
-      <h2>Conclusión</h2>
-      <p>
-        La programación ladder es una herramienta muy importante en la automatización industrial.
-        Gracias a su estructura visual, es una de las formas más comunes de programar PLC
-        en sistemas donde intervienen sensores, actuadores, temporizadores y motores.
-      </p>
-
-    </section>
+      </div><!-- /.applications-grid -->
+    </div><!-- /.container -->
+  </section>
 
   </main>
 
-  <footer class="footer-principal">
-    <p>Proyecto básico sobre programación ladder para PLC.</p>
-  </footer>
 
-  <div class="cookie-footer">
-    <p>
-      Este sitio utiliza cookies para mejorar la experiencia.
-      <a href="#inicio">Más información</a>
-    </p>
-    <button class="cookie-accept">Aceptar</button>
-  </div>
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__inner">
+
+        <!-- Columna marca -->
+        <div class="footer__brand">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <div class="navbar__logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="4" width="2" height="10" fill="#C87D3E"/>
+                <rect x="5" y="6" width="4" height="2" stroke="#C87D3E" stroke-width="1.2" fill="none"/>
+                <rect x="5" y="10" width="4" height="2" stroke="#C87D3E" stroke-width="1.2" fill="none" stroke-dasharray="1 0.5"/>
+                <line x1="3" y1="7" x2="5" y2="7" stroke="#C87D3E" stroke-width="1.2"/>
+                <line x1="9" y1="7" x2="13" y2="7" stroke="#C87D3E" stroke-width="1.2"/>
+                <line x1="3" y1="11" x2="5" y2="11" stroke="#C87D3E" stroke-width="1.2"/>
+                <line x1="9" y1="11" x2="13" y2="11" stroke="#C87D3E" stroke-width="1.2"/>
+                <rect x="13" y="4" width="2" height="10" fill="#C87D3E"/>
+              </svg>
+            </div>
+            <span style="font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--weight-bold); color: var(--text-primary);">Ladder PLC</span>
+          </div>
+          <p>
+            Guía técnica de referencia sobre programación Ladder y Controladores Lógicos Programables.
+            Elaborada con criterio técnico y pedagógico para ingenieros, técnicos y estudiantes de automatización.
+          </p>
+        </div>
+
+        <!-- Contenido -->
+        <div>
+          <span class="footer__col-title">Contenido</span>
+          <ul class="footer__links">
+            <li><a href="#plc" class="footer__link">Fundamentos del PLC</a></li>
+            <li><a href="#ladder" class="footer__link">Lógica Ladder</a></li>
+            <li><a href="#elementos" class="footer__link">Elementos básicos</a></li>
+            <li><a href="#ejemplo" class="footer__link">Circuito de ejemplo</a></li>
+          </ul>
+        </div>
+
+        <!-- Referencia -->
+        <div>
+          <span class="footer__col-title">Referencia</span>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">IEC 61131-3</a></li>
+            <li><a href="#" class="footer__link">Siemens S7-1200</a></li>
+            <li><a href="#" class="footer__link">Allen-Bradley Logix</a></li>
+            <li><a href="#" class="footer__link">Mitsubishi MELSEC</a></li>
+          </ul>
+        </div>
+
+        <!-- Nivel -->
+        <div>
+          <span class="footer__col-title">Nivel del curso</span>
+          <ul class="footer__links">
+            <li style="font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6;">
+              Introducción — Nivel 01<br />
+              Sin conocimientos previos de programación requeridos.<br /><br />
+              Recomendado para técnicos eléctricos e instrumentistas.
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.footer__inner -->
+
+      <!-- Barra inferior -->
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          Guía técnica — Programación Ladder para PLC — Automatización Industrial
+        </p>
+        <div class="footer__tags">
+          <span class="footer__tag">IEC 61131-3</span>
+          <span class="footer__tag">Ladder Logic</span>
+          <span class="footer__tag">PLC</span>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </footer>
 
 </body>
 </html>
